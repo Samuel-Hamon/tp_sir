@@ -1,0 +1,12 @@
+<h2>{{ isEditMode ? 'Modifier' : 'Créer' }} un artiste</h2>
+<form [formGroup]="artisteForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Nom :</label>
+    <input formControlName="nom" type="text">
+  </div>
+  <div>
+    <label>Prénom :</label>
+    <input formControlName="prenom" type="text">
+  </div>
+  <button type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
+</form>
