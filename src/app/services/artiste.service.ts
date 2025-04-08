@@ -3,9 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Artiste {
-  id: number;
   nom: string;
   prenom: string;
+  nationalite: string;
+  dateNaissance: string; // Format ISO peut-être, ou éventuellement LocalDateTime côté Java
+  email: string;
+  tel: string;
 }
 
 @Injectable({

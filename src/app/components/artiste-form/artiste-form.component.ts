@@ -23,8 +23,13 @@ export class ArtisteFormComponent implements OnInit {
     this.artisteForm = this.fb.group({
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
+      nationalite: [''],
+      dateNaissance: [''],
+      email: [''],
+      tel: ['']
     });
   }
+
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -42,7 +47,23 @@ export class ArtisteFormComponent implements OnInit {
     if (this.artisteForm.invalid) {
       return;
     }
-    const artiste: Artiste = this.artisteForm.value;
+
+    const formData = { ...this.artisteForm.value };
+
+    if (formData.dateNaissance) {
+      const date = new Date(formData.dateNaissance);
+      const year = date.getFullYear();
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const day = date.getDate().toString().padStart(2, '0');
+      const hours = date.getHours().toString().padStart(2, '0');
+      const minutes = date.getMinutes().toString().padStart(2, '0');
+      const seconds = date.getSeconds().toString().padStart(2, '0');
+      formData.dateNaissance = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+    }
+
+
+    const artiste: Artiste = formData;
+
     if (this.isEditMode && this.artisteId) {
       this.artisteService.updateArtiste(this.artisteId, artiste).subscribe(() => {
         this.router.navigate(['/artistes']);
@@ -53,4 +74,5 @@ export class ArtisteFormComponent implements OnInit {
       });
     }
   }
+
 }

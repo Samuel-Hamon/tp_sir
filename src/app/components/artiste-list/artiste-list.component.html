@@ -1,21 +1,25 @@
-<h2>Liste des Artistes</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prénom</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let artiste of artistes">
-      <td>{{ artiste.nom }}</td>
-      <td>{{ artiste.prenom }}</td>
-      <td>
-        <button (click)="supprimerArtiste(artiste.id)">Supprimer</button>
-        <!-- Vous pouvez ajouter un bouton pour éditer ici -->
-      </td>
-    </tr>
-  </tbody>
-</table>
-<button routerLink="/artistes/new">Ajouter un artiste</button>
+<div class="container">
+  <h2>Liste des Artistes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let artiste of artistes">
+        <td>{{ artiste.nom }}</td>
+        <td>{{ artiste.prenom }}</td>
+        <td>
+          <div class="buttons">
+            <button (click)="supprimerArtiste(artiste.id)">Supprimer</button>
+            <button [routerLink]="['/artistes/edit', artiste.id]">Modifier</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button routerLink="/artistes/new" class="add-btn">Ajouter un artiste</button>
+</div>
