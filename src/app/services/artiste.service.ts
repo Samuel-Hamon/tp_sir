@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Artiste {
+  id: number,
   nom: string;
   prenom: string;
   nationalite: string;
