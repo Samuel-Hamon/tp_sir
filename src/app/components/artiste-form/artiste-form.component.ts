@@ -45,6 +45,7 @@ export class ArtisteFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.artisteForm.invalid) {
+      this.artisteForm.markAllAsTouched();
       return;
     }
 

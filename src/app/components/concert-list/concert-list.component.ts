@@ -27,13 +27,15 @@ export class ConcertListComponent implements OnInit {
       complete: () => {
         console.log('Chargement terminé');
       }
-    });    
+    });
   }
 
   supprimerConcert(id: number): void {
-    if (confirm('Voulez-vous vraiment supprimer ce concert ?')) {
+    if (confirm('Voulez-vous vraiment supprimer le concert n°' + id + ' ?')) {
       this.concertService.deleteConcert(id).subscribe(() => {
         this.loadConcerts();  // Recharger la liste après suppression
+      }, error => {
+        console.error('Erreur lors de la suppression :', error);
       });
     }
   }

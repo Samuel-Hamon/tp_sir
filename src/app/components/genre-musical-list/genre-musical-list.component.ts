@@ -31,7 +31,7 @@ export class GenreMusicalListComponent implements OnInit {
   }
 
   supprimerGenreMusical(id: number): void {
-    if (confirm('Voulez-vous vraiment supprimer ce genre musical ?')) {
+    if (confirm('Voulez-vous vraiment supprimer le genre musical n°' + id + ' ?')) {
       this.genreMusicalService.deleteGenreMusical(id).subscribe(() => {
         this.loadGenreMusicals();  // Recharger la liste après suppression
       });

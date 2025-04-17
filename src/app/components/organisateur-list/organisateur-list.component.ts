@@ -31,7 +31,7 @@ export class OrganisateurListComponent implements OnInit {
   }
 
   supprimerOrganisateur(id: number): void {
-    if (confirm('Voulez-vous vraiment supprimer cet organisateur ?')) {
+    if (confirm('Voulez-vous vraiment supprimer cet organisateur n°' + id + ' ?')) {
       this.organisateurService.deleteOrganisateur(id).subscribe(() => {
         this.loadOrganisateurs();  // Recharger la liste après suppression
       });

@@ -3,6 +3,7 @@
   <table>
     <thead>
       <tr>
+        <th>Id</th>
         <th>Nom</th>
         <th>Prénom</th>
         <th>Actions</th>
@@ -10,6 +11,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let artiste of artistes">
+        <td>{{ artiste.id }}</td>
         <td>{{ artiste.nom }}</td>
         <td>{{ artiste.prenom }}</td>
         <td>

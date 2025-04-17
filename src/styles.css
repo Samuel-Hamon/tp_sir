@@ -30,10 +30,12 @@ body {
     justify-content: center;
     gap: 40px;
     width: 100%;
+    padding-bottom: 20px;
 }
 
 table {
-    width: 80%;
+    max-width: 870px;
+    width: 95%;
 }
 
 table thead {
@@ -104,4 +106,9 @@ table tbody .buttons {
     padding: 10px 20px;
     border-radius: 50px;
     cursor: pointer;
+}
+
+.input input.ng-invalid.ng-touched,
+.input select.ng-invalid.ng-touched {
+  border: 1px solid red;
 }

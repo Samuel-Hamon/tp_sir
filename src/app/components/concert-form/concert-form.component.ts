@@ -79,6 +79,8 @@ export class ConcertFormComponent implements OnInit {
       if (params['id']) {
         this.isEditMode = true;
         this.concertId = +params['id'];
+        this.concertForm.get('capacite')?.clearValidators();
+        this.concertForm.get('capacite')?.updateValueAndValidity();
         this.concertService.getConcertById(this.concertId).subscribe(concert => {
           this.concertForm.patchValue(concert);
         });
@@ -88,6 +90,7 @@ export class ConcertFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.concertForm.invalid) {
+      this.concertForm.markAllAsTouched();
       return;
     }
 

@@ -40,6 +40,7 @@ export class GenreMusicalFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.genreMusicalForm.invalid) {
+      this.genreMusicalForm.markAllAsTouched();
       return;
     }
 

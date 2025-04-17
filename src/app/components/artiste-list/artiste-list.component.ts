@@ -31,7 +31,7 @@ export class ArtisteListComponent implements OnInit {
   }
 
   supprimerArtiste(id: number): void {
-    if (confirm('Voulez-vous vraiment supprimer cet artiste ?')) {
+    if (confirm('Voulez-vous vraiment supprimer cet artiste n°' + id + ' ?')) {
       this.artisteService.deleteArtiste(id).subscribe(() => {
         this.loadArtistes();  // Recharger la liste après suppression
       });

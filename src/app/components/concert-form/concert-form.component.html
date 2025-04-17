@@ -1,7 +1,7 @@
 <div class="container">
   <h2>{{ isEditMode ? 'Modifier' : 'Créer' }} un concert</h2>
   <form [formGroup]="concertForm" (ngSubmit)="onSubmit()">
-    <div class="input">
+    <div class="input" *ngIf="!isEditMode">
       <label>Capacité :*</label>
       <input formControlName="capacite" type="number">
     </div>

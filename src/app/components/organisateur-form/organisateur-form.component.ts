@@ -45,6 +45,7 @@ export class OrganisateurFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.organisateurForm.invalid) {
+      this.organisateurForm.markAllAsTouched();
       return;
     }
 
