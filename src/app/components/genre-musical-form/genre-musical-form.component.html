@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>{{ isEditMode ? 'Modifier' : 'Créer' }} un genre musical</h2>
+    <form [formGroup]="genreMusicalForm" (ngSubmit)="onSubmit()">
+      <div class="input">
+        <label>Nom :*</label>
+        <input formControlName="nom" type="text">
+      </div>
+      <button type="submit" class="add-btn">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
+    </form>
+    <button routerLink="/genreMusicals" class="retour">Retour</button>
+  </div>

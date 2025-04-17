@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Liste des genres musicaux</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let genreMusical of genreMusicals">
+                <td>{{ genreMusical.id }}</td>
+                <td>{{ genreMusical.nom }}</td>
+                <td>
+                    <div class="buttons">
+                        <button (click)="supprimerGenreMusical(genreMusical.id)">Supprimer</button>
+                        <button [routerLink]="['/genreMusicals/edit', genreMusical.id]">Modifier</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button routerLink="/genreMusicals/new" class="add-btn">Ajouter un genre musical</button>
+</div>

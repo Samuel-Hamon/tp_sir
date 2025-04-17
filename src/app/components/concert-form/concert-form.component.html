@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>{{ isEditMode ? 'Modifier' : 'Créer' }} un concert</h2>
+  <form [formGroup]="concertForm" (ngSubmit)="onSubmit()">
+    <div class="input">
+      <label>Capacité :*</label>
+      <input formControlName="capacite" type="number">
+    </div>
+    <div class="input">
+      <label>Description :*</label>
+      <input formControlName="description" type="text">
+    </div>
+    <div class="input">
+      <label>Prix :</label>
+      <input formControlName="prix" type="number">
+    </div>
+    <div class="input">
+      <label>Lieu :</label>
+      <input formControlName="lieu" type="text">
+    </div>
+    <div class="input">
+      <label>Date :</label>
+      <input formControlName="date" type="datetime-local">
+    </div>
+    <div class="input">
+      <label>Pays :</label>
+      <input formControlName="pays" type="text">
+    </div>
+    <div class="input">
+      <label>Organisateur :*</label>
+      <select formControlName="organisateurId">
+        <option *ngFor="let organisateur of organisateurs" [value]="organisateur.id">
+          {{ organisateur.id }} - {{ organisateur.prenom }} {{ organisateur.nom }} ({{ organisateur.nationalite }})
+        </option>
+      </select>
+    </div>
+    <div class="input">
+      <label>Genre musical :*</label>
+      <select formControlName="genreMusicalId">
+        <option *ngFor="let genreMusical of genreMusicals" [value]="genreMusical.id">
+          {{ genreMusical.id }} - {{ genreMusical.nom }}
+        </option>
+      </select>
+    </div>
+    <!-- Sélection multiple des artistes -->
+    <div class="input">
+      <label>Artistes :*</label>
+      <select formControlName="artistesIds" multiple>
+        <option *ngFor="let artiste of artistes" [value]="artiste.id">
+          {{ artiste.id }} - {{ artiste.prenom }} {{ artiste.nom }} ({{ artiste.nationalite }})
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="add-btn">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
+  </form>
+  <button routerLink="/concerts" class="retour">Retour</button>
+</div>

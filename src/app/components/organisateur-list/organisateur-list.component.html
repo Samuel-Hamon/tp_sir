@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Liste des organisateurs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let organisateur of organisateurs">
+          <td>{{ organisateur.nom }}</td>
+          <td>{{ organisateur.prenom }}</td>
+          <td>
+            <div class="buttons">
+              <button (click)="supprimerOrganisateur(organisateur.id)">Supprimer</button>
+              <button [routerLink]="['/organisateurs/edit', organisateur.id]">Modifier</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button routerLink="/organisateurs/new" class="add-btn">Ajouter un organisateur</button>
+  </div>

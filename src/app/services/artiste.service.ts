@@ -7,7 +7,7 @@ export interface Artiste {
   nom: string;
   prenom: string;
   nationalite: string;
-  dateNaissance: string; // Format ISO peut-être, ou éventuellement LocalDateTime côté Java
+  dateNaissance: string;
   email: string;
   tel: string;
 }
