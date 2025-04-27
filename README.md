@@ -1,3 +1,19 @@
+# Informations
+
+L'application permet de visualiser/ajouter/modifier/supprimer les concerts/genres musicaux/artistes/organisateurs.
+- Page des concerts : http://localhost:4200/concerts
+- Page d'ajout d'un concert: http://localhost:4200/concerts/new
+- Page modification d'un concert : http://localhost:4200/concerts/edit/{id}
+- http://localhost:4200/artistes
+- http://localhost:4200/artistes/new
+- http://localhost:4200/artistes/edit/{id}
+- http://localhost:4200/genreMusicals
+- http://localhost:4200/genreMusicals/new
+- http://localhost:4200/genreMusicals/edit/{id}
+- http://localhost:4200/organisateurs
+- http://localhost:4200/organisateurs/new
+- http://localhost:4200/organisateurs/edit/{id}
+
 # TpSir
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
